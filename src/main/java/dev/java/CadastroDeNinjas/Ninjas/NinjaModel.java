@@ -1,27 +1,36 @@
-package dev.java.CadastroPersonagens;
+package dev.java.CadastroDeNinjas.Ninjas;
 
+import dev.java.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Table(name =  "tb_cadastro_personagens")
 @Entity
 
-public class PersonagemModel {
+public class NinjaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private  Long id;
     private String nome;
     private String email;
     private int idade;
 
+// muitos ninjas so podem ter uma missao
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") // chave estrangeira
+    private MissoesModel missoes;
 
-    public PersonagemModel(String nome, String email, int idade) {
+
+
+    public NinjaModel(String nome, String email, int idade) {
         this.nome = nome;
         this.email = email;
         this.idade = idade;
     }
 
-    public PersonagemModel() {
+    public NinjaModel() {
     }
 
     public String getNome() {

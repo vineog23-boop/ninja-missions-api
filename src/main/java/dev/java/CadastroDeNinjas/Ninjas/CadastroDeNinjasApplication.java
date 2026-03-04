@@ -1,13 +1,13 @@
-package dev.java.CadastroPersonagens;
+package dev.java.CadastroDeNinjas.Ninjas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CadastroPersonagensApplication {
+public class CadastroDeNinjasApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CadastroPersonagensApplication.class, args);
+		SpringApplication.run(CadastroDeNinjasApplication.class, args);
 	}
 
 }

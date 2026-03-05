@@ -13,8 +13,13 @@ public class NinjaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
+
     private String nome;
+
+    // colum com uniuque = true ; é utilizado em dados sensiveis e únicos --> como email, cpf,passaporte
+    @Column(unique = true)
     private String email;
+
     private int idade;
 
 // muitos ninjas so podem ter uma missao

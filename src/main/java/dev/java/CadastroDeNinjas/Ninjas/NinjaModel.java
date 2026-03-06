@@ -19,14 +19,21 @@ import java.util.List;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Column(name = "id")
     private  Long id;
 
+    @Column(name = "nome")
     private String nome;
 
     // colum com uniuque = true ; é utilizado em dados sensiveis e únicos --> como email, cpf,passaporte
     @Column(unique = true)
-
     private String email;
+
+    @Column(name = "img_url")
+    private String imgUrl;
+
+    @Column(name = "idade")
     private int idade;
 
 // Muitos ninjas so podem ter uma missao

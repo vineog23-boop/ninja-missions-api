@@ -36,6 +36,9 @@ import java.util.List;
     @Column(name = "idade")
     private int idade;
 
+    @Column(name = "rank")
+    private String rank;
+
 // Muitos ninjas so podem ter uma missao
     @ManyToOne
     @JoinColumn(name = "missoes_id") // chave estrangeira

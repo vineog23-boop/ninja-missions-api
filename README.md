@@ -15,3 +15,5 @@ A **Ninja Missions API** é um projeto de estudo voltado à prática de desenvol
 - Relacionamento entre ninjas e missões
 - Uso de DTOs e MapStruct
 - Migrations com Flyway
+## 🧱 Stack utilizada
+- **Java 21**, **Spring Boot 3.4.3**, **Spring Data JPA**, **H2**, **Flyway**, **MapStruct**, **Lombok**

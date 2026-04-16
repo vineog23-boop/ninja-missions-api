@@ -8,3 +8,10 @@
   <img src="https://img.shields.io/badge/MapStruct-FF6F00?style=for-the-badge" alt="MapStruct"/>
   <img src="https://img.shields.io/badge/Lombok-8B0000?style=for-the-badge" alt="Lombok"/>
 </p>
+## 📌 Sobre o projeto
+A **Ninja Missions API** é um projeto de estudo voltado à prática de desenvolvimento backend com Java e Spring Boot.
+## ✅ Funcionalidades estudadas
+- Cadastro e listagem de ninjas e missões
+- Relacionamento entre ninjas e missões
+- Uso de DTOs e MapStruct
+- Migrations com Flyway

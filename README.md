@@ -1,98 +1,93 @@
-# 🥷 CadastroDeNinjas
+# Cadastro de Ninjas API
 
-## 📌 O que o projeto faz
+> Observação: o repositório foi renomeado de `CadastroPersonagens` para `ninja-missions-api` para refletir melhor o conteúdo da aplicação.
 
-O **CadastroDeNinjas** é uma API REST backend desenvolvida para gerenciamento de ninjas e missões com propósito de Aprendizagem.
+API backend desenvolvida com Spring Boot para estudo de CRUD, relacionamento entre entidades, DTOs e migrations com Flyway.
 
-A aplicação permite:
+## Objetivo do projeto
 
-- Cadastro, listagem, atualização e remoção de ninjas
-- Cadastro e listagem de missões
-- Associação de missões a ninjas
-- Transferência de dados via **DTOs** com mapeamento automatizado
-- Persistência em banco de dados com **JPA + H2**
+Este projeto foi criado para praticar conceitos importantes do desenvolvimento backend em Java, incluindo:
 
----
+- modelagem de entidades
+- arquitetura em camadas
+- persistência com JPA
+- mapeamento entre entidade e DTO
+- versionamento de banco com Flyway
 
-## 🚀 Tecnologias utilizadas
+## Stack
 
 <p align="left">
-<img src="https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=openjdk"/>
-<img src="https://img.shields.io/badge/Spring_Boot-3.4.3-brightgreen?style=for-the-badge&logo=springboot"/>
-<img src="https://img.shields.io/badge/Spring_Data_JPA-blue?style=for-the-badge&logo=spring"/>
-<img src="https://img.shields.io/badge/Spring_Web-darkgreen?style=for-the-badge&logo=spring"/>
-<img src="https://img.shields.io/badge/H2_Database-lightblue?style=for-the-badge&logo=h2"/>
-<img src="https://img.shields.io/badge/Flyway-red?style=for-the-badge&logo=flyway"/>
-<img src="https://img.shields.io/badge/MapStruct-FF6F00?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/Lombok-8B0000?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=openjdk" alt="Java 21"/>
+  <img src="https://img.shields.io/badge/Spring_Boot-3.4.3-brightgreen?style=for-the-badge&logo=springboot" alt="Spring Boot 3.4.3"/>
+  <img src="https://img.shields.io/badge/Spring_Data_JPA-blue?style=for-the-badge&logo=spring" alt="Spring Data JPA"/>
+  <img src="https://img.shields.io/badge/Spring_Web-darkgreen?style=for-the-badge&logo=spring" alt="Spring Web"/>
+  <img src="https://img.shields.io/badge/H2-lightblue?style=for-the-badge&logo=h2" alt="H2 Database"/>
+  <img src="https://img.shields.io/badge/Flyway-red?style=for-the-badge&logo=flyway" alt="Flyway"/>
+  <img src="https://img.shields.io/badge/MapStruct-FF6F00?style=for-the-badge" alt="MapStruct"/>
+  <img src="https://img.shields.io/badge/Lombok-8B0000?style=for-the-badge" alt="Lombok"/>
 </p>
 
----
+## Funcionalidades estudadas
 
-## ⚙️ Como instalar e rodar localmente
+- cadastro e listagem de ninjas
+- cadastro e listagem de missões
+- relacionamento entre ninjas e missões
+- uso de DTOs para transferência de dados
+- mapeamento automatizado entre camadas
 
-### 🔧 Pré-requisitos
+## Configuração atual
 
-- Java 21
-- Maven
+O projeto está configurado para usar **H2** com parâmetros vindos de variáveis de ambiente.
 
----
-
-### 💻 Rodando localmente
+Exemplo de configuração local:
 
 ```bash
-git clone https://github.com/vineog23-boop/CadastroPersonagens.git
-cd CadastroPersonagens
+export DATABASE_URL=jdbc:h2:mem:cadastro_ninjas
+export DATABASE_USERNAME=admin
+export DATABASE_PASSWORD=admin
+```
+
+No Windows PowerShell:
+
+```powershell
+$env:DATABASE_URL="jdbc:h2:mem:cadastro_ninjas"
+$env:DATABASE_USERNAME="admin"
+$env:DATABASE_PASSWORD="admin"
+```
+
+## Como executar
+
+```bash
+git clone https://github.com/vineog23-boop/ninja-missions-api.git
+cd ninja-missions-api
 mvn clean install
 mvn spring-boot:run
 ```
 
-Acesse:
-
-- API: `http://localhost:8080`
-- H2 Console: `http://localhost:8080/h2-console`
-
----
-
-## 📂 Estrutura do projeto
+A aplicação sobe por padrão em:
 
 ```
-src/
- ├── Ninjas/
- │    ├── NinjaController.java
- │    ├── NinjaService.java
- │    ├── NinjaRepository.java
- │    ├── NinjaModel.java
- │    ├── NinjaDTO.java
- │    └── NinjaMapper.java
- └── Missoes/
-      ├── MissoesController.java
-      ├── MissoesRepository.java
-      └── MissoesModel.java
+http://localhost:8080
 ```
 
----
+Console H2:
 
-## 🧠 Conceitos aplicados
+```
+http://localhost:8080/h2-console
+```
 
-### 🔸 Spring Data JPA
-- Persistência com `@Entity`, `@Repository` e `JpaRepository`
+## Conceitos aplicados
 
-### 🔸 DTOs + MapStruct
-- Desacoplamento da camada de domínio com DTOs
-- Mapeamento automático entre `NinjaModel` ↔ `NinjaDTO` via **MapStruct**
+- arquitetura em camadas
+- JPA e relacionamento entre entidades
+- Flyway para versionamento do schema
+- DTOs para desacoplamento da camada de domínio
+- organização voltada a manutenção e clareza
 
-### 🔸 Relacionamento entre entidades
-- Missões associadas a ninjas com `@ManyToOne` / `@OneToMany`
+## Status
 
-### 🔸 Migrations com Flyway
-- Controle de versão do schema do banco via scripts SQL
+Projeto de estudo em evolução, com foco em consolidar fundamentos de Spring Boot e persistência de dados.
 
-### 🔸 Arquitetura em camadas
-- Separação clara: **Controller → Service → Repository → Model**
+## Autor
 
----
-
-## 👨‍💻 Autor
-
-Projeto desenvolvido por **Vinícius Gonçalves** como parte dos estudos em **Java Backend** — FIAP Pós-Tech 🚀
+Desenvolvido por **Vinícius Oliveira Gonçalves** como parte dos estudos em Java backend.
